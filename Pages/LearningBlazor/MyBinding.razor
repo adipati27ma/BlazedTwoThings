@@ -1,7 +1,16 @@
 @page "/my-binding"
 
-<h2>Two Way Data Binding</h2>
+<h2>Two Way Class Data Binding</h2>
+
+<h3>Category @tempData.Id : @tempData.Keterangan</h3>
+
+<p>Id :<br /> <input type="number" @bind-value="tempData.Id" @bind-value:event="oninput" /></p>
+<p>Keterangan :<br /> <input type="text" @bind="tempData.Keterangan" @bind:event="oninput" /></p>
 
 @code {
-
+  Data.Category tempData = new Data.Category
+  {
+    Id = 1,
+    Keterangan = "Masakan"
+  };
 }
