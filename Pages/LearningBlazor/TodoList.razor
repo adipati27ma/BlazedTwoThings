@@ -12,11 +12,13 @@
 
 <input placeholder="Something todo" @bind="newTodo" @bind:event="oninput" />
 <button @onclick="AddTodo">Add todo</button>
-<p>@newTodo is binding.</p>
+
+@* WAJIB PAKAI KUTIP 2 untuk conditional render TERNARY*@
+<p>@(!string.IsNullOrWhiteSpace(newTodo) ? newTodo : "nothing") is binding</p>
 
 @code {
   private List<TodoItem> todos = new();
-  private string? newTodo;
+  private string? newTodo = null;
 
   private void AddTodo()
   {

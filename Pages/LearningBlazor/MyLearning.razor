@@ -1,0 +1,22 @@
+@page "/my-learning"
+
+<h3 class="text-danger">@WelcomeText</h3>
+
+@for (int index = 0; index < 5; index++)
+{
+  <h4 class="text-primary">@index</h4>
+}
+<p>================================</p>
+
+<h3>Category @tempData.Id : @tempData.Keterangan</h3>
+
+@code {
+  private string WelcomeText = "Cara mudah belajar Blazor";
+
+  // Memasukkan class ke dalam component .razor (class dari folder Data)
+  Data.Category tempData = new Data.Category
+  {
+    Id = 1,
+    Keterangan = "Masakan"
+  };
+}
