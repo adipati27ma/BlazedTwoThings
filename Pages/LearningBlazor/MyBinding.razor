@@ -4,6 +4,7 @@
 
 <h3>Category @tempData.Id : @tempData.Keterangan</h3>
 
+@* Untuk input number, WAJIB pake @binding-value *@
 <p>Id :<br /> <input type="number" @bind-value="tempData.Id" @bind-value:event="oninput" /></p>
 <p>Keterangan :<br /> <input type="text" @bind="tempData.Keterangan" @bind:event="oninput" /></p>
 
