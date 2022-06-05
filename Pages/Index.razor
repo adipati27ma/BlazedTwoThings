@@ -12,10 +12,13 @@ Welcome to your new app.
 
 <h2 style="margin-top: 16px;">Routing from Index</h2>
 
-<a href="about">Go To About</a> | <a href="about-me">About Me</a>
+<a href="about" class="link-primary">Go To About</a> | <a href="about-me" class="link-primary">About Me</a>
 
 <div>
   <button class="btn btn-warning" @onclick="@(() => {_navigationManager.NavigateTo("/about/bogor/studio/2500");})">
     Send Value To About
   </button>
 </div>
+<br />
+<br />
+<a href="laporan" class="btn btn-danger">Go To Laporan Penjualan</a>
