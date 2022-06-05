@@ -4,5 +4,6 @@ namespace BlazedTwoThings.Data
   {
     public int Id { get; set; }
     public string? Keterangan { get; set; }
+    public bool isActive { get; set; }
   }
 }

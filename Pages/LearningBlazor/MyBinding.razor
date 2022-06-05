@@ -1,9 +1,14 @@
 @page "/my-binding"
 
 <h2>Two Way Class Data Binding</h2>
-
-<h3>Category @tempData.Id : @tempData.Keterangan</h3>
-
+<br />
+<br />
+<p>Category @tempData.Id = @tempData.Keterangan (Persediaan: @(tempData.isActive ? "Ada" : "Tidak Tersedia"))</p>
+<br />
+<span>
+  <input type="checkbox" checked="@tempData.isActive" @bind-value="tempData.isActive" @bind-value:event="onchange" />
+  &nbsp;Ready Stock
+</span>
 @* Untuk input number, WAJIB pake @binding-value *@
 <p>Id :<br /> <input type="number" @bind-value="tempData.Id" @bind-value:event="oninput" /></p>
 <p>Keterangan :<br /> <input type="text" @bind="tempData.Keterangan" @bind:event="oninput" /></p>
@@ -12,6 +17,7 @@
   Data.Category tempData = new Data.Category
   {
     Id = 1,
-    Keterangan = "Masakan"
+    Keterangan = "Masakan",
+    isActive = false,
   };
 }
