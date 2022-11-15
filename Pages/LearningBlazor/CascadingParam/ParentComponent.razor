@@ -1,0 +1,17 @@
+﻿<h3>Parent Component</h3>
+
+<p>Parent value = : @ValueOnParent</p>
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+<CascadingValue Value="ValueOnParent">
+    <ChildComponent />
+</CascadingValue>
+@code {
+    [CascadingParameter(Name = "MamahMia")]
+    public int ValueOnParent { get; set; }
+
+    private void IncrementCount()
+    {
+        ValueOnParent += 1;
+    }
+}

@@ -9,9 +9,9 @@
 <p>Product Price : @hargaProduk.ToString("#,##")</p>
 <br />
 <span>
-  <input id="availability" type="checkbox" checked="@tempData.isActive" @bind-value="tempData.isActive"
-    @bind-value:event="onchange" />
-  <label for="availability">&nbsp;Ready Stock</label>
+    <input id="availability" type="checkbox" checked="@tempData.isActive" @bind-value="tempData.isActive"
+           @bind-value:event="onchange" />
+    <label for="availability">&nbsp;Ready Stock</label>
 </span>
 @* Untuk input number, WAJIB pake @binding-value *@
 <p>Id :<br /> <input type="number" @bind-value="tempData.Id" @bind-value:event="oninput" /></p>
@@ -19,27 +19,27 @@
 
 <label for="nama-makanan">Pilih makanan : </label>
 <select name="" id="nama-makanan" @bind="hargaProduk">
-  <option value="0" disabled>Pilih</option>
-  @foreach (var item in tempData.Products)
-  {
-    <option value="@item.Harga">@item.Nama</option>
-  }
+    <option value="0" disabled>Pilih</option>
+    @foreach (var item in tempData.Products)
+    {
+        <option value="@item.Harga">@item.Nama</option>
+    }
 </select>
 
 @code {
-  decimal hargaProduk = 0;
-  Data.Category tempData = new Data.Category
-  {
-    Id = 1,
-    Keterangan = "Masakan",
-    isActive = false,
-    Products = new List<Data.Product>
-{
-new Data.Product{Id = 1, Nama = "Bakso", Harga=15000},
-new Data.Product{Id = 2, Nama = "Bihun Goreng", Harga=12000},
-new Data.Product{Id = 3, Nama = "Lele Bakar", Harga=21000},
-new Data.Product{Id = 4, Nama = "Es Krim", Harga=6000},
-new Data.Product{Id = 5, Nama = "Permen", Harga=500},
-}
-  };
+    decimal hargaProduk = 0;
+    Data.Category tempData = new Data.Category
+        {
+            Id = 1,
+            Keterangan = "Masakan",
+            isActive = false,
+            Products = new List<Data.Product>
+            {
+                new Data.Product{Id = 1, Nama = "Bakso", Harga=15000},
+                new Data.Product{Id = 2, Nama = "Bihun Goreng", Harga=12000},
+                new Data.Product{Id = 3, Nama = "Lele Bakar", Harga=21000},
+                new Data.Product{Id = 4, Nama = "Es Krim", Harga=6000},
+                new Data.Product{Id = 5, Nama = "Permen", Harga=500},
+            }
+        };
 }

@@ -1,0 +1,20 @@
+﻿@page "/cascading-parameter"
+
+<h3>Ancestor Component</h3>
+
+<p>Ancestor value = : @ValueOnAnc</p>
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+<CascadingValue Value="@ValueOnAnc" Name="MamahMia">
+    <ParentComponent />
+</CascadingValue>
+
+@code {
+    [CascadingParameter(Name = "MamahMia")]
+    public int ValueOnAnc { get; set; } = 201;
+
+    private void IncrementCount()
+    {
+        ValueOnAnc += 1;
+    }
+}
